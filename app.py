@@ -1,4 +1,5 @@
 from flask import Flask
+from datetime import date
 
 app = Flask(__name__)
 
@@ -10,5 +11,11 @@ def hello_world():
 @app.route("/openinghours")
 def openinghours():
     # https://schema.org/openingHours
-    response = {"openingHours": ["Mo-Fr 10:00-19:00", "Sa 10:00-22:00", "Su 10:00-21:00"]}
+    # https://developers.google.com/maps/documentation/places/web-service/details
+    # https://www.designmuseumgent.be/bezoek
+    response = {
+        "today": date.today(),
+        "open_now": True,
+        "openingHours": ["Mo-Tu 09:30-17:30", "Th-Fr 09:30-17:30", "Sa-Su 10:00-18:00"]
+    }
     return response
