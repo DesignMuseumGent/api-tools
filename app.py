@@ -20,7 +20,6 @@ def openinghours():
 
     response = {
         "today": today,
-        "open_now": open_now,
-        "openingHours": ["Mo-Tu 09:30-17:30", "Th-Fr 09:30-17:30", "Sa-Su 10:00-18:00"]
+        "open_now": open_now()
     }
     return response
