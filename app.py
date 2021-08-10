@@ -1,5 +1,7 @@
 from flask import Flask
 from datetime import date
+from utils.utils import open_now
+import json
 
 app = Flask(__name__)
 
@@ -15,11 +17,6 @@ def openinghours():
     # https://www.designmuseumgent.be/bezoek
 
     today = date.today()
-    # Nevers open on Wednesday
-    if today.weekday() == 2:
-        open_now = True
-    else:
-        open_now = False
 
     response = {
         "today": today,
