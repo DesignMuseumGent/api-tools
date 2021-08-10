@@ -2,5 +2,5 @@
 
 ## fetch if the museum is open
 ```
-curl https://dmg-openinghours.herokuapp.com/openinghours
+curl --request GET https://dmg-openinghours.herokuapp.com/openinghours
 ```
